@@ -1,0 +1,17 @@
+﻿@model BinkenJamen.ViewModels.BinkViewModel
+
+	@{
+		Layout = "_Layout";
+	}
+<div><a asp-controller="Bink" asp-action="AddBink">Create a Bink:</a></div>
+<table class="table" align="center">
+	<tbody>
+@foreach (var item in Model.Binks) {
+
+			<tr><td align="center"><h2> @item.Nickname</h2></td></tr>
+			<tr><td align="center"><a asp-controller="Bink" asp-action="CloseUp" asp-route-id=@item.Id><img src="@item.ImageUrl" style="width:300px" /></a></td></tr><br />
+			<tr><td align="center">@item.ShortDescription</td></tr>
+			<tr><td align="center"><hr /></td></tr>
+}
+	</tbody>
+</table>
