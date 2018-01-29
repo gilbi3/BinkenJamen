@@ -19,11 +19,14 @@ namespace BinkenJamen
 			app.UseStatusCodePages();
 			app.UseStaticFiles();
 			app.UseMvc(routes =>
-			{
-				//Need additional routing information.
+			{ 
 				routes.MapRoute(
 					name: "default",
 					template: "{Controller=Bink}/{action=Index}/{id?}");
+
+				routes.MapRoute(
+					name: "different",
+					template: "{action=Index}/{Controller=Bink}/{id?}");
 			});
 		}
 	}

@@ -17,7 +17,8 @@ namespace BinkenJamen.Controllers
 			_repo = binkRepository;
 		}
 
-		// GET: /Bink/
+
+		[HttpGet]
 		public IActionResult Index()
 		{
 			var binkViewModel = new BinkViewModel()
@@ -28,6 +29,7 @@ namespace BinkenJamen.Controllers
 			return View(binkViewModel);
 		}
 
+		[HttpGet]
 		public IActionResult CloseUp(int id)
 		{
 			var bink = _repo.GetBinkById(id);
@@ -39,7 +41,7 @@ namespace BinkenJamen.Controllers
 			return View(bink);
 		}
 
-		// GET
+		[HttpGet]
 		public IActionResult AddBink()
 		{
 			return View();
@@ -54,11 +56,8 @@ namespace BinkenJamen.Controllers
 				_repo.AddBink(bink);
 				return RedirectToAction("Index");
 			}
-			else
-			{
-				Console.WriteLine("Unable to submit Bink...");
-				return View();
-			}
+			Console.WriteLine("Unable to submit Bink...");
+			return View();
 		}
 	}
 }
