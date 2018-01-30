@@ -15,11 +15,11 @@ namespace BinkenJamen.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			string connectionString = "Server = tcp:talula.database.windows.net,1433; Initial Catalog = bink; Persist Security Info = False; User ID = gilbi3; Password = Algernon!7; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
-			//string connectionString = Environment.GetEnvironmentVariable("AZURE_CONNECTION_STRING");
-			//Comment and uncomment to disable logging.
-			optionsBuilder.UseLoggerFactory(MyLoggerFactory)
-				.UseSqlServer(connectionString);
+			//string connectionString = "Server = tcp:talula.database.windows.net,1433; Initial Catalog = bink; Persist Security Info = False; User ID = gilbi3; Password = Algernon!7; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
+			////string connectionString = Environment.GetEnvironmentVariable("AZURE_CONNECTION_STRING");
+			////Comment and uncomment to disable logging.
+			//optionsBuilder.UseLoggerFactory(MyLoggerFactory)
+			//	.UseSqlServer(connectionString);
 		}
 	}
 }
