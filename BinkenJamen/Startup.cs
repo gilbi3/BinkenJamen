@@ -11,6 +11,7 @@ namespace BinkenJamen
 		{
 			services.AddTransient<IBinkRepository, BinkRepository>();
 			services.AddMvc();
+			services.AddEntityFrameworkSqlServer();
 		}
 
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
